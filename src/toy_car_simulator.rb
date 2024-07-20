@@ -1,6 +1,6 @@
 require 'set'
 
-class Car
+class ToyCar
   def self.generate_obstacles(start_x, end_x, y)
     (start_x..end_x).map { |x| { x: x, y: y } }
   end
@@ -9,9 +9,9 @@ class Car
   GRID_SIZE = { x: 15, y: 10 }
   OBSTACLES = Set.new([
     { x: 4, y: 6 }, { x: 5, y: 12 },
-    *generate_obstacles(3, 5, 8),   # Horizontal wall from (3,8) to (5,8)
-    *generate_obstacles(6, 8, 8),   # Horizontal wall from (6,8) to (8,8)
-    *generate_obstacles(2, 4, 10)   # Horizontal wall from (2,10) to (4,10)
+    *generate_obstacles(3, 5, 8),
+    *generate_obstacles(6, 8, 8),
+    *generate_obstacles(2, 4, 10)
   ])
 
   attr_reader :x, :y, :direction
@@ -101,5 +101,5 @@ class Car
 end
 
 instructions = 'F3, R, F4, R, F2, F1, L, B1, F2, R, R, R, F1, R, F2, R, F4, F1'
-car = Car.new
-puts car.run(instructions)
+ToyCar = ToyCar.new
+puts ToyCar.run(instructions)
