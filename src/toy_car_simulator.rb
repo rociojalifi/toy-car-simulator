@@ -1,6 +1,7 @@
 require 'set'
 
 class ToyCar
+
   def self.generate_obstacles(start_x, end_x, y)
     (start_x..end_x).map { |x| { x: x, y: y } }
   end
