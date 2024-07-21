@@ -1,7 +1,6 @@
 require 'set'
 
 class ToyCar
-
   def self.generate_obstacles(start_x, end_x, y)
     (start_x..end_x).map { |x| { x: x, y: y } }
   end
@@ -20,6 +19,7 @@ class ToyCar
   def initialize
     @x, @y = 5, 5
     @direction = 'U'
+    @crashed = false
   end
 
   def run(instructions)
@@ -102,5 +102,5 @@ class ToyCar
 end
 
 instructions = 'F3, R, F4, R, F2, F1, L, B1, F2, R, R, R, F1, R, F2, R, F4, F1'
-ToyCar = ToyCar.new
-puts ToyCar.run(instructions)
+car = ToyCar.new
+puts car.run(instructions)
