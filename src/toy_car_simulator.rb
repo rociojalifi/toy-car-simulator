@@ -49,8 +49,8 @@ class ToyCar
   def move(steps)
     dx, dy = direction_vector
     steps.abs.times do
-      next_x = @x + dx * steps / steps.abs
-      next_y = @y + dy * steps / steps.abs
+      next_x = @x + (dx * steps / steps.abs)
+      next_y = @y + (dy * steps / steps.abs)
 
       if valid_position?(next_x, next_y)
         @x, @y = next_x, next_y
@@ -58,10 +58,6 @@ class ToyCar
         @crashed = true
         break
       end
-    end
-
-    if !valid_position?(@x, @y)
-      @crashed = true
     end
   end
 

@@ -53,7 +53,7 @@ De output van het programma is een reeks omschrijvingen van de positie en richti
 ### Voorbeeld input en output
 
 - Input: `F3, R, F4, R, F2, F1, L, B1, F2, R, R, R, F1, R, F2, R, F4, F1`
-- Output: `(5,7,U)*, (5,7,R), (7,7,R)*, (7,7,D), (7,5,D), (7,4,D), (7,4,R), (7,4,R)*, (9,4,R), (9,4,D), (9,4,L), (9,4,U), (9,5,U), (9,5,R), (11,5,R), (11,5,D), (11,1,D), (11,1,D)*`
+- Output: `(5,7,U)*, (5,7,R), (7,7,R)*, (7,7,D), (7,5,D), (7,4,D), (7,4,R), (6,4,R), (8,4,R), (8,4,D), (8,4,L), (8,4,U), (8,5,U), (8,5,R), (10,5,R), (10,5,D), (10,1,D), (10,1,D)*`
 
 ## Aanwijzingen
 

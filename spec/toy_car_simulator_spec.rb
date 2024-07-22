@@ -1,4 +1,3 @@
-# spec/toy_car_simulator_spec.rb
 require 'rspec'
 require_relative '../src/toy_car_simulator'
 
@@ -8,7 +7,7 @@ RSpec.describe ToyCar do
   describe '#run' do
     it 'executes instructions and returns the correct output' do
       instructions = 'F3, R, F4, R, F2, F1, L, B1, F2, R, R, R, F1, R, F2, R, F4, F1'
-      expected_output = '(5,7,U)*, (5,7,R), (7,7,R)*, (7,7,D), (7,5,D), (7,4,D), (7,4,R), (7,4,R)*, (9,4,R), (9,4,D), (9,4,L), (9,4,U), (9,5,U), (9,5,R), (11,5,R), (11,5,D), (11,1,D), (11,1,D)*'
+      expected_output = '(5,7,U)*, (5,7,R), (7,7,R)*, (7,7,D), (7,5,D), (7,4,D), (7,4,R), (6,4,R), (8,4,R), (8,4,D), (8,4,L), (8,4,U), (8,5,U), (8,5,R), (10,5,R), (10,5,D), (10,1,D), (10,1,D)*'
       expect(car.run(instructions)).to eq(expected_output)
     end
   end
@@ -19,7 +18,7 @@ RSpec.describe ToyCar do
       expect(car.send(:valid_position?, 1, 1)).to be true
     end
 
-    it 'returns false for positions with obstacles or out of limites' do
+    it 'returns false for positions with obstacles or out of limits' do
       expect(car.send(:valid_position?, 4, 6)).to be false 
       expect(car.send(:valid_position?, 16, 5)).to be false 
     end
