@@ -14,6 +14,8 @@ class ToyCar
     *generate_obstacles(2, 4, 10)
   ])
 
+  OBSTACLE = { x: 9, y: 8 }
+
   attr_reader :x, :y, :direction
 
   def initialize
@@ -22,7 +24,7 @@ class ToyCar
     @crashed = false
   end
 
-  def run(instructions)
+  def run(degrees, direction )
     instructions.split(', ').map do |instruction|
       execute_instruction(instruction)
       formatted_position
@@ -79,7 +81,13 @@ class ToyCar
   end
 
   def valid_position?(x, y)
-    within_bounds?(x, y) && !OBSTACLES.include?({ x: x, y: y })
+    within_bounds?(x, y) && !OBSTACLES.include?({ x: x, y: y })  || OBSTACLE.include?({ x: 9, y: 8 }).set_timing
+  end
+
+  def set_timing
+    start_time = Time.now
+    sleep(2) 
+    end_time = Time.now
   end
 
   def within_bounds?(x, y)
@@ -98,5 +106,7 @@ class ToyCar
 end
 
 instructions = 'F3, R, F4, R, F2, F1, L, B1, F2, R, R, R, F1, R, F2, R, F4, F1'
+degrees = [0...360]
+direction = {down:0, up:1}
 car = ToyCar.new
 puts car.run(instructions)
